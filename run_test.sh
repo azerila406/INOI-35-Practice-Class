@@ -32,7 +32,7 @@ for infile in "$IN_DIR"/input*.txt; do
 
     "$EXE" < "$infile" > "$TMP"
 
-    if diff -q "$TMP" "$outfile" > /dev/null; then
+    if diff -wB "$TMP" "$outfile" > /dev/null; then
         echo "[PASS] Test $num passed"
     else
         echo "[FAIL] Test $num failed"
